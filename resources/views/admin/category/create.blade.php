@@ -4,6 +4,7 @@
 @section('content')
     <form action="{{route('admin.category.store')}}" method="POST">
         @csrf
+        @include('admin.includes.errors')
         <div class="card-body">
             <div class="form-group">
                 <label>Title of Category</label>

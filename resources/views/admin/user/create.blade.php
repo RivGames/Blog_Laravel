@@ -19,7 +19,7 @@
                 <input type="password" class="form-control" name="password1" value="{{old('password1')}}">
             </div>
             <div class="form-group">
-                <label>Выберите категорию</label>
+                <label>Виберіть категорію</label>
                 <select name="role" class="form-control">
                     @foreach($roles as $id => $role)
                         <option value="{{$id}}" {{$id == old('role_id') ? 'selected' : ''}}>{{$role}}</option>

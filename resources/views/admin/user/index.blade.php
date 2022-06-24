@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
-@section('title','AdminCategories')
-@section('sub-title','Categories')
+@section('title','AdminUsers')
+@section('sub-title','Users')
 @section('content')
     <a href="{{route('admin.user.create')}}">
         <button class="btn btn-primary ml-1">Создати юзера</button>

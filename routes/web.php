@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/', 'IndexController')->name('main.index');
+    Route::get('/category-php', 'Category1Controller')->name('main.category_php');
+    Route::get('/category-cpp', 'Category2Controller')->name('main.category_cpp');
+    Route::get('/post/{post}','ShowController')->name('main.show');
 });
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth','admin']], function () {
     Route::group(['namespace' => 'Main'], function () {
@@ -49,4 +52,4 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [\App\Http\Controllers\Personal\HomeController::class, 'index'])->name('personal.home');

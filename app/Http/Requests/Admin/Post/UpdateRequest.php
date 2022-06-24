@@ -24,13 +24,24 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:15',
-            'content' => 'required|min:10|max:1000',
+            'title' => 'required|string|max:25',
+            'content' => 'required|min:10|max:10000',
             'main_image' => 'required|file',
             'category_id' => 'required|exists:categories,id',
-            'tag_ids' => 'nullable|array',
+            'tag_ids' => 'required|nullable|array',
             'tag_ids.*' => 'nullable|integer|exists:tags,id',
         ];
     }
-    //TODO:public function messages()
+    public function messages()
+    {
+        return [
+            'title.required' => 'назва поста об\'язково повинна бути',
+            'title.max' => 'назва поста не повинна бути більша за 15 символів',
+            'content.required' => 'поле має бути заповнено content',
+            'content.min' => 'поле content не повинно бути меншеим за 10 символів',
+            'content.max' => 'поле content не повинно бути більшим за 10000 символів',
+            'tag_ids.required' => 'Виберіть будь ласка теги',
+            'category_id.required' => 'Виберіть будь ласка категорію'
+        ];
+    }
 }

@@ -29,5 +29,15 @@ class UpdateRequest extends FormRequest
             'role' => 'required|integer',
         ];
     }
-    //TODO:public function messages()
+    public function messages()
+    {
+        return [
+            'name.required' => 'поле має бути заповнено',
+            'name.string' => 'поле має бути string',
+            'name.max' => 'поле має бути не більше 10 символів',
+            'name.min' => 'поле має бути не менше 4 символів',
+            'name.unique' => 'такий нейм уже є в базі данних',
+            'role.required' => 'виберіть роль',
+        ];
+    }
 }

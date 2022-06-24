@@ -9,7 +9,7 @@
             @include('admin.includes.errors')
             <div class="card-body">
                 <div class="form-group">
-                    <label>Title of Category</label>
+                    <label>Title of Post</label>
                     <input type="text" class="form-control" name="title" value="{{$post['title']}}">
                 </div>
                 <div class="form-group">

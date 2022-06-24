@@ -30,5 +30,19 @@ class StoreRequest extends FormRequest
             'role' => 'required|integer',
         ];
     }
-    //TODO:public function messages()
+    public function messages()
+    {
+        return [
+            'name.required' => 'поле має бути заповнено',
+            'name.string' => 'поле має бути string',
+            'name.max' => 'поле має бути не більше 10 символів',
+            'name.min' => 'поле має бути не менше 4 символів',
+            'name.unique' => 'такий нейм уже є в базі данних',
+            'password.required' => 'перше поле паролю повинно бути заповнено',
+            'password.min' => 'перше поле паролю повинно бути не менше 5 символів',
+            'password1.required' => 'друге поле паролю повинно бути заповнено',
+            'password1.min' => 'друге поле паролю повинно бути не менше 5 символів',
+            'role.required' => 'виберіть роль',
+        ];
+    }
 }

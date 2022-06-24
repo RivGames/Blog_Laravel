@@ -27,5 +27,12 @@ class UpdateRequest extends FormRequest
             'title' => 'required|string|max:15',
         ];
     }
-    //TODO:public function messages()
+    public function messages()
+    {
+        return [
+            'title.required' => 'поле має бути заповнено',
+            'title.string' => 'поле має бути string',
+            'title.max' => 'поле має бути не більше 15 символів',
+        ];
+    }
 }
