@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="d-flex justify-content-between align-items-center navbar-top">
                 <ul class="navbar-left">
-                    <li>{{$today_day}}</li>
+                    <li>{{$today}}</li>
                 </ul>
                 <div>
                     <a class="navbar-brand" href="#"> TopBlog</a>
@@ -101,11 +101,11 @@
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link active"
-                               href="{{route('main.category_php')}}">PHP</a>
+                               href="{{route('main.category',1)}}">PHP</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link active"
-                               href="{{route('main.category_cpp')}}">C++</a>
+                               href="{{route('main.category',2)}}">C++</a>
                         </li>
                     </ul>
                 </div>

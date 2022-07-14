@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/', 'IndexController')->name('main.index');
-    Route::get('/category-php', 'Category1Controller')->name('main.category_php');
-    Route::get('/category-cpp', 'Category2Controller')->name('main.category_cpp');
+    Route::get('/category/{category}', 'CategoryController')->name('main.category');
     Route::get('/post/{post}','ShowController')->name('main.show');
 });
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth','admin']], function () {
